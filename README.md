@@ -23,6 +23,23 @@ This folder contains the MATLAB scripts and datasets used to extract rate consta
   - Gnew.m: Analyzes new sequences designed in the second design iteration (Section 5 of the report).
 
 ## Simulation
+The Simulation folder contains scripts used to model, validate, and statistically analyze the kinetics of DNA strand displacement reactions with and without mismatches. These simulations were critical for designing sequences with predictable reaction rates and for validating the applicability of theoretical models prior to experimental testing.
+
+  ### Purpose
+  The simulation work was focused on:
+  - Designing DNA sequences with varying toehold mismatches.
+  - Predicting reaction kinetics using ΔG values.
+  - Statistically analyzing the range of possible rate constants.
+  - Verifying theoretical models using the framework by Zhang et al.
+
+  ### File Description
+  - BIOREGEN.ipynb: Automates toehold sequence generation and NUPACK simulations to evaluate thermodynamic stability and calculate ΔG for ~3,675 mismatched sequences.
+  - MismatchGeneration.ipynb: Produces mismatched toehold strands with 1–3 base-pair mismatches in various positions.
+  - ShiftedG.m: Uses the Zhang model to calculate predicted rate constants for mismatched strands and visualizes how ΔG offsets impact rate constants.
+  - JACSSimulation.m: Implements the core kinetic prediction model and supports the comparison between theoretical and experimental data.
+  - DNAstats.m: Performs statistical analysis on ΔG distributions across different mismatch types (1, 2, or 3 mismatches).
+  - Separating_mismatches.m: Segregates strand designs by mismatch count and compiles distributions for statistical interpretation.
+  - elim_redun.m: Identifies and removes redundant strand sequences in the dataset.
 
 ## Website
 This website provides a user-friendly interface for automated design of DNA toehold sequences that match a desired strand displacement rate constant (k). The tool combines a curated database of experimentally characterized sequences with computational screening using NUPACK to ensure structural viability.
